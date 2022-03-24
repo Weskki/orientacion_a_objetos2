@@ -11,25 +11,17 @@ public class Tweet implements Retweeteable {
 
 	@Override
 	public String getText() {
-		return null;
+		return texto;
 	}
 
 	@Override
 	public Usuario getUsuario() {
-		return null;
+		return autor;
 	}
 
 	@Override
 	public Retweet retweet() {
 		return new Retweet(this);
-	}
-
-	public String getTexto() {
-		return texto;
-	}
-
-	public Usuario getAutor() {
-		return autor;
 	}
 
 }

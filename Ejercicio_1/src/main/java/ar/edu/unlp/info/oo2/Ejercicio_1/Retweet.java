@@ -33,7 +33,11 @@ public class Retweet implements Retweeteable {
 	}
 	
 	protected boolean existeOrigen() {
-		return tweetOrigen == null ;
+		return tweetOrigen != null ;
+	}
+	
+	public Tweet getTweetOrigen() {
+		return tweetOrigen;
 	}
 
 }
