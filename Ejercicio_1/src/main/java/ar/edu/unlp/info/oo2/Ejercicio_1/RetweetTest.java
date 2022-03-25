@@ -22,7 +22,6 @@ class RetweetTest {
 	void testRetweet() {
 		Retweet resultado = retweet.retweet();
 		assertEquals("Me gusta programar en objetos",resultado.getTweetOrigen().getText());
-		assertEquals(usuario,resultado.getTweetOrigen().getUsuario());
 		assertTrue(resultado.getTweetOrigen().getUsuario().getScreenName()=="Federico");
 
 	}
