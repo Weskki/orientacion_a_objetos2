@@ -12,9 +12,16 @@ public class Usuario {
 		this.screenName = unNombre;
 	}
 	
-	public boolean  crearTweet(String text) {
-		Tweet nuevoTweet = new Tweet(text, this);
-		return tweets.add(nuevoTweet);
+	private boolean cumpleFormato(String texto) {
+		return (texto.length() < 140 && texto.length() >= 1);
+	}
+	
+	public boolean crearTweet(String text) {
+		if (this.cumpleFormato(text)){
+			Tweet nuevoTweet = new Tweet(text, this);
+			return tweets.add(nuevoTweet);	
+		}
+		return false;
 	}
 	
 	public Retweet retweetear(Retweeteable unRetweeteable) {
