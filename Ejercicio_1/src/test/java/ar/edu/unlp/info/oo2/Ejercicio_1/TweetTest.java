@@ -27,7 +27,6 @@ class TweetTest {
 		assertEquals(usuario.getScreenName(),tweet.getUsuario().getScreenName());
 		assertEquals(usuario.getTweets(),tweet.getUsuario().getTweets());
 		assertEquals(usuario.geteMail(),tweet.getUsuario().geteMail());
-		
 	}
 	
 	@Test
