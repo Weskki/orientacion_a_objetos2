@@ -5,7 +5,6 @@ public class Socio {
 	private String legajo;
 	private String email;
 
-
 	public Socio(String nombre, String email, String legajo) {
 		this.nombre = nombre;
 		this.email = email;
