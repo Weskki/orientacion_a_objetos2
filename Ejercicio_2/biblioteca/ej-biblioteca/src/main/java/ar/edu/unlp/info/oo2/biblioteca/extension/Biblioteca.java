@@ -27,7 +27,7 @@ public class Biblioteca {
 		return exporter;
 	}
 
-	public void setExporter(VoorheesExporter exporter) {
+	public void setExporter(VoorheesExporter exporter){
 		this.exporter = exporter;
 	}
 }
