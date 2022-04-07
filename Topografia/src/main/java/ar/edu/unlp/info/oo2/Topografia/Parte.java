@@ -1,9 +1,10 @@
 package ar.edu.unlp.info.oo2.Topografia;
 
 public class Parte extends Topografia{
-	private int proporcionAgua;
+	private double proporcionAgua;
 
-	public Parte(int proporcionAgua) {
+
+	public Parte(double proporcionAgua) {
 		this.proporcionAgua = proporcionAgua;
 	}
 
