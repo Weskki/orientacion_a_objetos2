@@ -1,25 +1,22 @@
 package ar.edu.unlp.info.oo2.Calculo_Sueldos;
 
-public class Temporario extends Empleado {
+public class Temporario extends Esclavo {
 
-	private boolean casado;
-	private int cantHijos;
+	private double horasTrabajadas;
 	
-	public Temporario(int hijos, boolean estaCasado) {
-		super();
-		casado = estaCasado;
-		cantHijos = hijos;
+	public Temporario(String nombre,Double sueldoBase,int hijos, boolean estaCasado,double horas) {
+		super(nombre,sueldoBase,estaCasado,hijos);
+		horasTrabajadas = horas;
 	}
 	
 	@Override
-	protected double calcularAdicional() {
-		double adicional = 0;
-		
-		if (casado) {
-			adicional += 5000;
-		}
-		adicional += 2000 * cantHijos;
-		return adicional;
+	public double calcularAdicional() {
+		return adicionalPorCasadoConHijos();
+	}
+	
+	@Override
+	public double calcularSueldoBase() {
+		return sueldoBase + (horasTrabajadas * 300);
 	}
 
 }

@@ -4,21 +4,21 @@ public abstract class Empleado {
 	
 	protected String nombre;
 	protected double sueldoBase;
-	protected double horasTrabajadas;
 	
-	public Empleado() {
-		
+	protected Empleado(String unNombre,double unsueldoBase){
+		nombre = unNombre;
+		sueldoBase = unsueldoBase;
 	}
 	
-	public double sueldo() {
-		return sueldoBase + this.calcularAdicional()
-				- this.descuento();
+	public double sueldo(){
+		return (calcularSueldoBase() + calcularAdicional()) - descuento();
 	}
 	
-	protected abstract double calcularAdicional();
+	public abstract double calcularSueldoBase();
 	
-	protected double descuento() {
-		return (this.sueldoBase * 0.13) 
-				+ (this.calcularAdicional() * 0.05);
+	public abstract double calcularAdicional();
+	
+	public double descuento() {
+		return (sueldoBase * 0.13) + (calcularAdicional() * 0.05);
 	}
 }

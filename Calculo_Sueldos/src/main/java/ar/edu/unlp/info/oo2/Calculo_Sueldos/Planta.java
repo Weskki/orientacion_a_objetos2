@@ -1,28 +1,22 @@
 package ar.edu.unlp.info.oo2.Calculo_Sueldos;
 
-public class Planta extends Empleado {
+public class Planta extends Esclavo {
 
-	private boolean casado;
-	private int cantHijos;
 	private int antiguedadEnAnios;
 	
-	public Planta(boolean estaCasado, int hijos, int antiguedad) {
-		super();
-		casado = estaCasado;
-		cantHijos = hijos;
+	public Planta(String nombre,Double sueldoBase,boolean estaCasado, int hijos, int antiguedad) {
+		super(nombre,sueldoBase,estaCasado,hijos);
 		antiguedadEnAnios = antiguedad;
 	}
 
 	@Override
-	protected double calcularAdicional() {
-		double adicional = 0;
-		
-		if (casado) {
-			adicional += 5000;
-		}
-		adicional += (2000 * cantHijos) + 
-						(2000 * antiguedadEnAnios);
-		return adicional;
+	public double calcularAdicional() {
+		return adicionalPorCasadoConHijos()+(2000*antiguedadEnAnios);
+	}
+	
+	@Override
+	public double calcularSueldoBase() {
+		return 50000;
 	}
 	
 	
