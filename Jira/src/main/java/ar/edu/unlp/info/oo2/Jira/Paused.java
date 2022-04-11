@@ -1,5 +1,8 @@
 package ar.edu.unlp.info.oo2.Jira;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+
 public class Paused extends State {
 
 	public Paused(ToDoItem anItem) {
@@ -18,6 +21,7 @@ public class Paused extends State {
 
 	@Override
 	protected void finish() {
+		this.item.setEndingDate(LocalDateTime.now());
 		this.item.changeState(new Finished(item));
 	}
 
@@ -30,6 +34,11 @@ public class Paused extends State {
 	@Override
 	protected void addComment(String aComment) {
 		this.item.comment(aComment);
+	}
+
+	@Override
+	protected Duration getDuration() {
+		return item.workedTime(LocalDateTime.now());
 	}
 
 }

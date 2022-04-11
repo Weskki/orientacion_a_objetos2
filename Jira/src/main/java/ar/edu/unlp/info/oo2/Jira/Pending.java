@@ -1,5 +1,7 @@
 package ar.edu.unlp.info.oo2.Jira;
 
+import java.time.Duration;
+
 public class Pending extends State {
 	
 	public Pending(ToDoItem anItem) {
@@ -31,6 +33,11 @@ public class Pending extends State {
 	@Override
 	protected void addComment(String aComment) {
 		this.item.comment(aComment);
+	}
+
+	@Override
+	protected Duration getDuration() {
+		throw new RuntimeException("This Item has not been started yet");
 	}
 	
 	

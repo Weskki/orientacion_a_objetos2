@@ -1,4 +1,5 @@
 package ar.edu.unlp.info.oo2.Jira;
+import java.time.*;
 
 public class InProgress extends State {
 
@@ -18,6 +19,7 @@ public class InProgress extends State {
 
 	@Override
 	protected void finish() {
+		this.item.setEndingDate(LocalDateTime.now());
 		this.item.changeState(new Finished(item));	
 	}
 
@@ -30,6 +32,11 @@ public class InProgress extends State {
 	@Override
 	protected void addComment(String aComment) {
 		this.item.comment(aComment);
+	}
+
+	@Override
+	protected Duration getDuration() {
+		return item.workedTime(LocalDateTime.now());
 	}
 
 }

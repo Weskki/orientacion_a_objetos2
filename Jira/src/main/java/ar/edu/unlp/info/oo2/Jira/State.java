@@ -1,4 +1,5 @@
 package ar.edu.unlp.info.oo2.Jira;
+import java.time.Duration;
 
 public abstract class State {
 	
@@ -13,5 +14,6 @@ public abstract class State {
 	protected abstract void finish();
 	protected abstract void workedTime();
 	protected abstract void addComment(String aComment);
+	protected abstract Duration getDuration();
 	
 }

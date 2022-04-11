@@ -1,11 +1,15 @@
 package ar.edu.unlp.info.oo2.Jira;
 import java.util.*;
+import java.time.LocalDateTime;
+import java.time.*;
 
 public class ToDoItem {
 
 	private State state;
 	private String name;
 	private List<String> comments;
+	private LocalDateTime startingDate;
+	private LocalDateTime endingDate;
 	
 	public ToDoItem(String aName) {
 		state = new Pending(this);
@@ -35,6 +39,7 @@ public class ToDoItem {
 	public void finish() {
 		this.state.finish();
 	}
+	
 	/**
 	* Retorna el tiempo que transcurrió desde que se inició la tarea (start)
 	* hasta que se finalizó. En caso de que no esté finalizada, el tiempo que
@@ -42,14 +47,29 @@ public class ToDoItem {
 	* genera un error informando la causa específica del mismo.
 	*/
 	public Duration workedTime() {
-		return null;
+		return state.getDuration();
 	}
+	
 	/**
 	* Agrega un comentario a la tarea siempre y cuando no haya finalizado. Caso
 	* contrario no hace nada."
 	*/
 	public void addComment(String comment) {
 		this.state.addComment(comment);
+	}
+	
+	// Added
+	public LocalDateTime getStartingDate() {
+		return this.startingDate;
+	}
+	
+	// Added
+	public LocalDateTime getFinishDate() {
+		return this.endingDate;
+	}
+	
+	public String getName() {
+		return name;
 	}
 	
 	protected void changeState(State aState) {
@@ -59,5 +79,20 @@ public class ToDoItem {
 	protected void comment(String aComment) {
 		comments.add(aComment);
 	}
+	
+	protected void setStartingDate() {
+		startingDate = LocalDateTime.now();
+	}
+	
+	protected void setEndingDate(LocalDateTime anEndingDate) {
+		endingDate = anEndingDate;
+	}
+	
+	protected Duration workedTime(LocalDateTime aDate) {
+		return Duration.between(startingDate, aDate);
+	}
+	
+	
+	
 	
 }
