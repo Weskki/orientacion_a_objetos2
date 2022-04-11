@@ -47,7 +47,7 @@ public class ToDoItem {
 	* genera un error informando la causa específica del mismo.
 	*/
 	public Duration workedTime() {
-		return state.getDuration();
+		return state.workedTime();
 	}
 	
 	/**

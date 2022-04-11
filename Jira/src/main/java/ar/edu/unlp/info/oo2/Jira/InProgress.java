@@ -24,8 +24,8 @@ public class InProgress extends State {
 	}
 
 	@Override
-	protected void workedTime() {
-		// TODO Auto-generated method stub
+	protected Duration workedTime() {
+		return item.workedTime(item.getFinishDate());
 		
 	}
 
@@ -34,9 +34,5 @@ public class InProgress extends State {
 		this.item.comment(aComment);
 	}
 
-	@Override
-	protected Duration getDuration() {
-		return item.workedTime(LocalDateTime.now());
-	}
 
 }

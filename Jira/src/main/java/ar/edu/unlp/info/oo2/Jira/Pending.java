@@ -26,7 +26,7 @@ public class Pending extends State {
 	}
 
 	@Override
-	protected void workedTime() {
+	protected Duration workedTime() {
 		throw new RuntimeException("This Item has not been started yet");
 	}
 
@@ -35,10 +35,6 @@ public class Pending extends State {
 		this.item.comment(aComment);
 	}
 
-	@Override
-	protected Duration getDuration() {
-		throw new RuntimeException("This Item has not been started yet");
-	}
 	
 	
 }

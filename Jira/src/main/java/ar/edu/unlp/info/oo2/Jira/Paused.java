@@ -26,19 +26,13 @@ public class Paused extends State {
 	}
 
 	@Override
-	protected void workedTime() {
-		// TODO Auto-generated method stub
-		
+	protected Duration workedTime() {
+		return item.workedTime(LocalDateTime.now());
 	}
 
 	@Override
 	protected void addComment(String aComment) {
 		this.item.comment(aComment);
-	}
-
-	@Override
-	protected Duration getDuration() {
-		return item.workedTime(LocalDateTime.now());
 	}
 
 }

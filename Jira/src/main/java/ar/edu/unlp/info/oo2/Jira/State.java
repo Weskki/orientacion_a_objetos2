@@ -12,8 +12,7 @@ public abstract class State {
 	protected abstract void start();
 	protected abstract void togglePause();
 	protected abstract void finish();
-	protected abstract void workedTime();
+	protected abstract Duration workedTime();
 	protected abstract void addComment(String aComment);
-	protected abstract Duration getDuration();
 	
 }
