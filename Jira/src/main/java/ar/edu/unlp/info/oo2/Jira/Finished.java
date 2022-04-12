@@ -1,7 +1,6 @@
 package ar.edu.unlp.info.oo2.Jira;
 
 import java.time.Duration;
-import java.time.LocalDateTime;
 
 public class Finished extends State {
 
@@ -27,11 +26,6 @@ public class Finished extends State {
 	@Override
 	protected Duration workedTime() {
 		return item.workedTime(item.getFinishDate());
-	}
-
-	@Override
-	protected void addComment(String aComment) {
-		this.item.comment(aComment);
 	}
 
 }

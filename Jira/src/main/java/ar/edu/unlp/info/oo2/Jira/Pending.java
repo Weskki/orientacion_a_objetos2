@@ -10,6 +10,7 @@ public class Pending extends State {
 	
 	@Override
 	protected void start() {
+		item.setStartingDate();
 		this.item.changeState(new InProgress(item));	
 	}
 
@@ -29,12 +30,6 @@ public class Pending extends State {
 	protected Duration workedTime() {
 		throw new RuntimeException("This Item has not been started yet");
 	}
-
-	@Override
-	protected void addComment(String aComment) {
-		this.item.comment(aComment);
-	}
-
 	
 	
 }

@@ -13,6 +13,8 @@ public abstract class State {
 	protected abstract void togglePause();
 	protected abstract void finish();
 	protected abstract Duration workedTime();
-	protected abstract void addComment(String aComment);
+	protected void addComment(String aComment) {
+		this.item.comment(aComment);
+	}
 	
 }
