@@ -14,8 +14,9 @@ public class Directorio extends FileSystem {
 	}
 	
 	public int tamanioOcupado() {
-		return this.nodos_hijo.
-				stream().map(e -> e.tamanioOcupado()).sum();
+//		return this.nodos_hijo.
+//				stream().map(e -> e.tamanioOcupado()).sum();
+		return 0;
 	}
 
 	
