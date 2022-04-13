@@ -13,7 +13,15 @@ public class Dispositivo {
 		crcCalculator = aCrcCalculator;
 	}
 	
+	public void setCalculator(CrcCalculator calculator) {
+		crcCalculator = calculator;
+	}
+	
+	public void changeConnection(Connection connection) {
+		
+	}
+	
 	public String send(String data) {
-		return null;
+		return connection.sendData(data, crcCalculator.crcFor(data));
 	}
 }

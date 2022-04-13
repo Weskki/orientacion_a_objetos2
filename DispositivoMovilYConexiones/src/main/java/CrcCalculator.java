@@ -1,6 +1,6 @@
 
 public interface CrcCalculator {
 
-	public Integer crcFor(String data);
+	public abstract Integer crcFor(String data);
 	
 }

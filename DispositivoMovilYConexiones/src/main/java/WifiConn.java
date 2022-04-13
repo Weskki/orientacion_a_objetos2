@@ -1,12 +1,15 @@
 
 public class WifiConn implements Connection{
 
+	private String pict;
+	
 	public String sendData(String data, Integer crc) {
-		return null;
+		Ringer.ring();
+		return Display.showBanner(pict);
 	}
 
 	public String pict() {
-		return null;
+		return pict;
 	}
 
 }

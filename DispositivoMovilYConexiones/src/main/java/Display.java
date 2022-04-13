@@ -1,8 +1,8 @@
 
 public class Display {
 
-	public String showBanner(String img) {
-		return null;
+	public static String showBanner(String img) {
+		return img;
 	}
 	
 }
