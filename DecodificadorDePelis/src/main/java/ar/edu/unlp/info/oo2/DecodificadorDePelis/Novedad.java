@@ -12,6 +12,7 @@ public class Novedad implements Sugerible {
 		.stream()
 		.filter(p->!reproducidas.contains(p))
 		.sorted(Comparator.comparingInt(Pelicula::getAnoEstreno))
+		.limit(3)
 		.collect(Collectors.toList());
 	}
 

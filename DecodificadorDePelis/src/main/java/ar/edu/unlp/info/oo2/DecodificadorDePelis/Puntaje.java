@@ -12,6 +12,7 @@ public class Puntaje implements Sugerible {
 				.stream()
 				.filter(p->!reproducidas.contains(p))
 				.sorted(Comparator.comparingDouble(Pelicula::getPuntaje))
+				.limit(3)
 				.collect(Collectors.toList());
 	}
 
