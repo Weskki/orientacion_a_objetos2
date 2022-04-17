@@ -4,13 +4,13 @@ import java.util.*;
 public class Pelicula {
 	
 	private String titulo;
-	private int añoEstreno;
+	private int anoEstreno;
 	private double puntaje;
 	private List<Pelicula> similares;
 	
 	public Pelicula(String unTitulo, int unAñoEstreno, double unPuntaje, List<Pelicula> unaLista) {
 		titulo = unTitulo; 
-		añoEstreno = unAñoEstreno; 
+		anoEstreno = unAñoEstreno; 
 		puntaje = unPuntaje;
 		similares = unaLista;
 		
@@ -20,8 +20,8 @@ public class Pelicula {
 		return titulo;
 	}
 
-	public int getAñoEstreno() {
-		return añoEstreno;
+	public int getAnoEstreno() {
+		return anoEstreno;
 	}
 
 	public double getPuntaje() {
