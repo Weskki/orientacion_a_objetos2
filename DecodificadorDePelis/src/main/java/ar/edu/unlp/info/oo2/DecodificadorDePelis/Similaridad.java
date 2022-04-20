@@ -10,9 +10,9 @@ public class Similaridad implements Sugerible {
 	public List<Pelicula> sugerir(List<Pelicula> peliculas, List<Pelicula> reproducidas) {
 		return peliculas
 				.stream()
-				.filter(p->reproducidas.stream()
-						.allMatch(r->r.getSimilares().contains(p)))
 				.filter(p->!reproducidas.contains(p))
+				.filter(p->reproducidas.stream()
+						.anyMatch(r->r.getSimilares().contains(p))) //envidia de atributos
 				.sorted(Comparator.comparingInt(Pelicula::getAnoEstreno))
 				.limit(3)
 				.collect(Collectors.toList());

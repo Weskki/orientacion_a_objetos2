@@ -10,7 +10,7 @@ public class Decodificador {
 	
 	public Decodificador(List<Pelicula> grilla, Sugerible unaConfig) {
 		configSugerencias = unaConfig;
-		grillaPeliculas = grilla;
+		grillaPeliculas = new ArrayList<>(grilla);
 		reproducidas = new ArrayList<Pelicula>();
 	}
 	
@@ -19,7 +19,9 @@ public class Decodificador {
 	}
 	
 	public void reproducir(Pelicula unaPelicula) {
-		reproducidas.add(unaPelicula);
+		if (!reproducidas.contains(unaPelicula)) {
+			reproducidas.add(unaPelicula);
+		}
 	}
 	
 	public void configurarSugerencia(Sugerible unaConfig) {

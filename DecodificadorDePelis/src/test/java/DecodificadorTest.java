@@ -36,13 +36,7 @@ class DecodificadorTest {
 		rocky = new Pelicula("Rocky", 1976, 8.1, new ArrayList<>(Arrays.asList(rambo)));
 		rambo = new Pelicula("Rambo", 1979, 7.8, new ArrayList<>(Arrays.asList(rocky)));
 		
-		grilla = new ArrayList<Pelicula>();
-		grilla.add(thor);
-		grilla.add(capitanAmerica);
-		grilla.add(ironMan);
-		grilla.add(dunkirk);
-		grilla.add(rocky);
-		grilla.add(rambo);
+		List<Pelicula> grilla = Arrays.asList(thor, capitanAmerica, ironMan,dunkirk,rocky,rambo);
 		
 		decodificador = new Decodificador(grilla, new Similaridad());
 

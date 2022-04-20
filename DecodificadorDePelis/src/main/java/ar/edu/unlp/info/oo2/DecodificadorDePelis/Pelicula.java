@@ -8,11 +8,11 @@ public class Pelicula {
 	private double puntaje;
 	private List<Pelicula> similares;
 	
-	public Pelicula(String unTitulo, int unAñoEstreno, double unPuntaje, List<Pelicula> unaLista) {
+	public Pelicula(String unTitulo, int unAñoEstreno, double unPuntaje, List<Pelicula> similares) {
 		titulo = unTitulo; 
 		anoEstreno = unAñoEstreno; 
 		puntaje = unPuntaje;
-		similares = unaLista;
+		this.similares = new ArrayList<>(similares);
 		
 	}
 	
@@ -33,7 +33,10 @@ public class Pelicula {
 	}
 	
 	public void agregarASimilares(Pelicula unaPeliSimilar) {
-		similares.add(unaPeliSimilar);
+		if (!similares.contains(unaPeliSimilar)) {
+			similares.add(unaPeliSimilar);
+			unaPeliSimilar.agregarASimilares(this);
+		}
 	}
 
 
