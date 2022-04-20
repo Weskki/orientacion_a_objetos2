@@ -11,7 +11,11 @@ public class DatabaseRealAccess implements DatabaseAccess {
     private Map<String, List<String>> data;
     private int currentId;
 
-    public DatabaseRealAccess() {
+    public int getCurrentId() {
+		return currentId;
+	}
+
+	public DatabaseRealAccess() {
         super();
         this.data = new HashMap<>();
         this.currentId = 3;
@@ -30,5 +34,9 @@ public class DatabaseRealAccess implements DatabaseAccess {
         this.currentId = this.currentId + 1;
 
         return this.currentId - 1;
+    }
+
+    public boolean isAllowed(int currentId) {
+    	return false;
     }
 }
