@@ -11,10 +11,6 @@ public class DatabaseRealAccess implements DatabaseAccess {
     private Map<String, List<String>> data;
     private int currentId;
 
-    public int getCurrentId() {
-		return currentId;
-	}
-
 	public DatabaseRealAccess() {
         super();
         this.data = new HashMap<>();
@@ -22,6 +18,10 @@ public class DatabaseRealAccess implements DatabaseAccess {
         this.data.put("select * from comics where id=1", Arrays.asList("Spiderman", "Marvel"));
         this.data.put("select * from comics where id=2", Arrays.asList("Batman", "DC comics"));
     }
+	
+    public int getCurrentId() {
+		return currentId;
+	}
 
     @Override
     public Collection<String> getSearchResults(String queryString) {

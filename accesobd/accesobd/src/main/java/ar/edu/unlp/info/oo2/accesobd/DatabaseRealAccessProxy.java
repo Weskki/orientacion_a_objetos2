@@ -5,9 +5,13 @@ import java.util.Collection;
 import java.util.List;
 
 public class DatabaseRealAccessProxy implements DatabaseAccess{
+	// Proxy de protección: para validar datos (caso de este ejercicio)
+	// Proxy virtual: para un acceso a base de datos eficiente (sólo se cargan los datos cuando son necesarios)
+	// Proxy remoto: para representar otro objeto almacenado en otra dirección de memoria
 
 	private DatabaseRealAccess databaseRealAccess;
 	
+	// Constructor
 	public DatabaseRealAccessProxy(DatabaseRealAccess databaseRealAccess) {
 		this.databaseRealAccess = databaseRealAccess;
 	}
@@ -28,7 +32,7 @@ public class DatabaseRealAccessProxy implements DatabaseAccess{
 		return databaseRealAccess.insertNewRow(rowData);
 	}
 
-	public boolean checkAccess(int currentId) {
+	private boolean checkAccess(int currentId) {
 		return databaseRealAccess.isAllowed(currentId);
 	}
 	

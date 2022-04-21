@@ -3,12 +3,12 @@ import java.util.*;
 
 public class Decodificador {
 
-	private Sugerible configSugerencias;
+	private Sugerencia configSugerencias;
 	private List<Pelicula> grillaPeliculas;
 	private List<Pelicula> reproducidas;
 	
 	
-	public Decodificador(List<Pelicula> grilla, Sugerible unaConfig) {
+	public Decodificador(List<Pelicula> grilla, Sugerencia unaConfig) {
 		configSugerencias = unaConfig;
 		grillaPeliculas = new ArrayList<>(grilla);
 		reproducidas = new ArrayList<Pelicula>();
@@ -24,7 +24,7 @@ public class Decodificador {
 		}
 	}
 	
-	public void configurarSugerencia(Sugerible unaConfig) {
+	public void configurarSugerencia(Sugerencia unaConfig) {
 		configSugerencias = unaConfig;
 	}
 	
