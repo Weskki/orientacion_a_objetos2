@@ -19,7 +19,16 @@ public class FileDecorator extends File {
 
 	@Override
 	public File decorateWith(FileDecorator aDecorator) {
-		return aDecoratedFile = aDecorator;
-	}	
+		aDecorator.addDecorator(this);
+		return aDecorator;
+	}
+	
+	public File getDecoratedFile() {
+		return this.aDecoratedFile;
+	}
+	
+	private void addDecorator(File aFile) {
+		this.aDecoratedFile = aFile;
+	}
 
 }

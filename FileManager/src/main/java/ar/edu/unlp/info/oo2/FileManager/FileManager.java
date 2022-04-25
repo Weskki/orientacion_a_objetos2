@@ -23,5 +23,9 @@ public class FileManager {
 		return files.add(aFile);
 	}
 	
+	public File getFileAtIndex(int index) {
+		return files.get(index);
+	}
+	
 	
 }

@@ -4,8 +4,9 @@ public class SizeDecorator extends FileDecorator {
 
 	private double size;
 	
-	public SizeDecorator(File aFileToDecorate) {
+	public SizeDecorator(File aFileToDecorate, double aSize) {
 		super(aFileToDecorate);
+		size = aSize;
 	}
 	
 }

@@ -7,6 +7,7 @@ public class CrDateDecorator extends FileDecorator {
 	
 	public CrDateDecorator(File aFileToDecorate) {
 		super(aFileToDecorate);
+//		crDate = LocalDate.now();
 	}
 
 }
